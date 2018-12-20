@@ -16,8 +16,8 @@ const items = [
   {
     type: 'image',
     handle: 'square-up',
-    url: '/demo/square-up.png',
-    title: 'square-up.png',
+    url: '/demo/square-up.jpg',
+    title: 'square-up.jpg',
     description: 'Longer text about the block, pulled from the webpage using open graph meta tags. Or maybe you wrote this shit on your own ya know.'
   },
   {

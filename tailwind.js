@@ -543,7 +543,8 @@ module.exports = {
     'full': '100%',
     'screen': '100vh',
     '25vh': '25vh',
-    '50vh': '50vh'
+    '50vh': '50vh',
+    '1em': '1em'
   },
 
   /*
@@ -717,6 +718,7 @@ module.exports = {
   opacity: {
     '0': '0',
     '25': '.25',
+    '35': '.35',
     '50': '.5',
     '75': '.75',
     '100': '1'
@@ -790,7 +792,7 @@ module.exports = {
     borderCollapse: false,
     borderColors: [],
     borderRadius: [],
-    borderStyle: false,
+    borderStyle: [],
     borderWidths: [],
     cursor: [],
     display: [],
@@ -809,7 +811,7 @@ module.exports = {
     negativeMargin: [],
     objectFit: false,
     objectPosition: false,
-    opacity: false,
+    opacity: [],
     outline: false,
     overflow: [],
     padding: [],
