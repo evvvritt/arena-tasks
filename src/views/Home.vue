@@ -1,25 +1,18 @@
 <template lang="pug">
   section.bg-white.min-h-screen.px-4
     article.sticky.pin-t.overflow-hidden(v-for="(list, i) in channels", :key="i", :class="cardClasses(i)")
-      .min-h-75vh.border.rounded-lg.bg-white.shadow(:class="listClasses(list)")
-        header.p-6.cursor-pointer(@click="active = active === i ? null : i")
-          h1 {{list.title}}
-        ul
-          li.p-6.border-t.border-dotted.overflow-hidden(v-for="(item, ii) in list.items", :key="ii", :class="{'border-b': ii === list.items.length - 1, 'opacity-25': active === null }")
-            article.max-h-1em
-              template(v-if="item.type === 'link'")
-                h4.text-sm.truncate {{item.title}}
-              template(v-if="item.type === 'text'")
-                h4.text-sm.truncate {{item.title}}
-              template(v-else-if="item.type === 'image'")
-                figure.max-h-1em.px-6.pt-2
-                  img.block.m-auto(:src="item.url")
+      .border.rounded-lg.bg-white.shadow.overflow-hidden(:class="listClasses(list, i)")
+        header.cursor-pointer(@click="active = active === i ? null : i")
+          h1.p-6.text-2xl.truncate {{list.title}}
+        list-items(:items="list.items", :disabled="active !== i")
 </template>
 
 <script>
 import { items as dummyItems } from '@/demo/dummy'
+import ListItems from '@/components/ListItems'
 export default {
   name: 'Home',
+  components: { ListItems },
   data () {
     return {
       active: null,
@@ -60,15 +53,17 @@ export default {
         'pt-4': true
       }
       if (this.active === i) return {
-        'pt-4': true
+        'pt-4 pb-24': true
       }
       if (this.active !== i) return {
         'max-h-0': true
       }
     },
-    listClasses (list) {
+    listClasses (list, i) {
       const type = list.type
       return {
+        'h-75vh': this.active === null,
+        'min-h-75vh': i === this.active,
         'border-red text-red': type === 'private',
         'border-green text-green': type === 'public',
         'border-grey text-grey': type === 'closed'

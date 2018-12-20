@@ -53,7 +53,7 @@ let colors = {
   // 'grey-lighter': '#f1f5f8',
   // 'grey-lightest': '#f8fafc',
   'white': '#ffffff',
-  'green': 'green',
+  'green': '#24bf2a',
   'red': 'red'
 }
 
@@ -450,7 +450,8 @@ module.exports = {
     '48': '12rem',
     '64': '16rem',
     'full': '100%',
-    'screen': '100vh'
+    'screen': '100vh',
+    '75vh': '75vh'
   },
 
   /*
@@ -721,6 +722,7 @@ module.exports = {
     '25': '.25',
     '35': '.35',
     '50': '.5',
+    '66': '.66',
     '75': '.75',
     '100': '1'
   },
@@ -816,7 +818,7 @@ module.exports = {
     outline: false,
     overflow: [],
     padding: [],
-    pointerEvents: false,
+    pointerEvents: [],
     position: [],
     resize: false,
     shadows: [],
